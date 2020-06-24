@@ -19,7 +19,9 @@ export default {
     date: {type: Date, default: new Date()}
   },
   methods:{
-     moment: function () {
+    moment: function () {
+      return moment();
+    }
   }
 }
 </script>
