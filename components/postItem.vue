@@ -5,16 +5,21 @@
       <h5 class="subtitle is-5">{{ subtitle }}</h5>
     </a>
     <div class="post-content">
-      by Filip Jerga, 27th Jan, 2019
+      by Filip {{ moment(date).format('LLL') }}
     </div>
   </div>
 </template>
 
 <script>
+import moment from 'moment'
 export default {
   props: {
     title: {type: String},
-    subtitle: {type: String}
+    subtitle: {type: String},
+    date: {type: Date, default: new Date()}
+  },
+  methods:{
+     moment: function () {
   }
 }
 </script>
