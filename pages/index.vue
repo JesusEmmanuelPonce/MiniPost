@@ -16,7 +16,8 @@
                   :key="post.id"
                   :title="post.title"
                   :subtitle="post.subtitle"
-                  :date="post.createdAt"}
+                  :date="post.createdAt"
+                  :isRead="post.isRead"
                 />
               </div>
             </div>
@@ -37,29 +38,17 @@ export default {
   },
   data(){
     return{
-      posts: [
-        {
-          id: 1,
-          title: 'My first post',
-          subtitle: 'My first subtitle post',
-          createdAt: new Date()
-        },
-        {
-          id: 2,
-          title: 'My second post',
-          subtitle: 'My seconf subtitle post',
-          createdAt: new Date()
-        }
-      ]
+      posts: this.$store.state.posts
     }
   }
 }
 </script>
 
 <style>
-  .post-content {
+  .post-footer {
     font-style: italic;
   }
+
   .post {
     margin-bottom: 20px;
     padding: 5px;
